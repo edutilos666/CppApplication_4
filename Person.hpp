@@ -13,7 +13,8 @@ private:
     Name name; 
     double wage; 
 public:
-  //  Person(Address, Name, double); 
+    Person(Address, Name, double); 
+    Person(); 
     void setAddress(Address); 
     void setName(Name); 
     Address getAddress(); 
@@ -22,11 +23,15 @@ public:
     double getWage(); 
 };
 
-//     Person::Person(Address address, Name name, double wage) {
-//         this-> address = address ; 
-//         this-> name = name; 
-//         this-> wage = wage; 
-//     } 
+
+Person::Person() {
+    
+}
+     Person::Person(Address address, Name name, double wage) {
+         this-> address = address ; 
+         this-> name = name; 
+         this-> wage = wage; 
+     } 
     void Person::setAddress(Address address) {
         this-> address = address ; 
     } 

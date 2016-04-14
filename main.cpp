@@ -34,6 +34,10 @@ int main(int argc, char** argv) {
     
     
     printPerson(p1); 
+    
+    
+    Person p2(Address("Berlin", "Germany"), Name("edu", "tilos"), (double)rand()); 
+    printPerson(p2); 
     return 0;
 }
 
