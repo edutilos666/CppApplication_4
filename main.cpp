@@ -13,14 +13,42 @@
 
 #include <cstdlib>
 #include <iostream>
+#include "Person.hpp"
+#include <ctime>
 
 using namespace std;
 
-/*
- * 
- */
+
+inline void printPerson(Person); 
 int main(int argc, char** argv) {
     cout << "Hello world" << endl ; 
+    
+    Address a1("Bochum", "Sumperkamp"); 
+    Name n1("foo", "bar"); 
+    
+    srand((unsigned)time(NULL)); 
+    Person p1; 
+    p1.setAddress(a1); 
+    p1.setName(n1); 
+    p1.setWage((double)rand()); 
+    
+    
+    printPerson(p1); 
     return 0;
 }
 
+
+
+inline void printPerson(Person person) {
+    string line1 = person.getAddress().getLine1(), 
+            line2 = person.getAddress().getLine2(), 
+            first = person.getName().getFirst(), 
+            last = person.getName().getLast(); 
+    double wage = person.getWage(); 
+    
+    cout << "line1 = "<< line1 << endl 
+            << "line2 = " << line2 << endl 
+            << "first = "  << first << endl 
+            << "last = " << last << endl 
+            << "wage = " << wage << endl ; 
+}
